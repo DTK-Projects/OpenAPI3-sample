@@ -1,0 +1,13 @@
+type: object
+required:
+- level
+- title
+properties:
+    parent_id:
+        type: integer
+        format: int
+    level:
+        type: integer
+        format: int
+    title:
+        type: string

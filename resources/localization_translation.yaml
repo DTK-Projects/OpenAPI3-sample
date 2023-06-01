@@ -1,0 +1,57 @@
+TranslationPath:
+  post:
+    tags:
+    - LocalizationTranslation
+    summary: Create New Localization Key
+    requestBody:
+      content:
+        application/json:
+          schema:
+            $ref: '../schemas/localization_translation_schema.yaml'
+            example:
+              text: РџРµСЂРµРєР»Р°Рґ
+              language: uk
+              localization_key_id: 4
+    responses:
+      '200':
+        $ref: '../responses/success_response.yaml'
+TranslationPathWithID:
+  patch:
+    tags:
+    - LocalizationTranslation
+    summary: Update Localization Translation by ID
+    security:
+    - BearerAuth: [ ]
+    parameters:
+    - in: path
+      name: id
+      required: true
+      schema:
+        type: string
+        example: "1"
+    requestBody:
+      content:
+        application/json:
+          schema:
+            $ref: '../schemas/localization_key_schema.yaml'
+            example:
+              text: РџРµСЂРµРєР»Р°Рґ 2
+    responses:
+      '200':
+        $ref: "../responses/success_response.yaml"
+  delete:
+    tags:
+    - LocalizationTranslation
+    summary: Delete Localization Translation by ID
+    security:
+    - BearerAuth: []
+    parameters:
+    - in: path
+      name: id
+      required: true
+      schema:
+        type: string
+        example: "1"
+    responses:
+      '200':
+        $ref : "../responses/success_response.yaml"

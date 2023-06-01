@@ -1,0 +1,13 @@
+type: object
+required:
+- text
+- language
+- localization_key_id
+properties:
+    text:
+        type: string
+    localization_key_id:
+        type: integer
+        format: int
+    language:
+        type: string

@@ -1,0 +1,28 @@
+openapi: 3.0.0
+info:
+  title: API documentation
+  version: 1.0.0
+servers:
+- url: https://localization-qa.ms.meddata.com.ua/
+- url: http://localhost:2000/
+tags:
+- name: User
+paths:
+  /api/admin/localization/keys:
+    $ref: './resources/localization_key.yaml#/KeyPath'
+  /api/admin/localization/keys/{id}:
+    $ref: './resources/localization_key.yaml#/KeyPathWithID'
+  /api/admin/localization/translations:
+    $ref: './resources/localization_translation.yaml#/TranslationPath'
+  /api/admin/localization/translations/{id}:
+    $ref: './resources/localization_translation.yaml#/TranslationPathWithID'
+
+components:
+  schemas:
+    LocalizationKey:
+      $ref: '#/schemas/localization_key_schema.yaml'
+    LocalizationTranslation:
+      $ref: '#/schemas/localization_translation_schema.yaml'
+  securitySchemes:
+    BearerAuth:
+      $ref: '#/schemas/security_schema.yaml'

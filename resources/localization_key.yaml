@@ -1,0 +1,66 @@
+KeyPath:
+  get:
+    tags:
+      - LocalizationKey
+    summary: Get all localization keys
+    security:
+      - BearerAuth: []
+    responses:
+      '200':
+        $ref: '../responses/success_response.yaml'
+  post:
+    tags:
+      - LocalizationKey
+    summary: Create New Localization Key
+    requestBody:
+      content:
+        application/json:
+          schema:
+            $ref: '../schemas/localization_key_schema.yaml'
+            example:
+              title: med-supply
+              level: 1
+    responses:
+      '200':
+        $ref: '../responses/success_response.yaml'
+KeyPathWithID:
+  patch:
+    tags:
+    - LocalizationKey
+    summary: Update Localization Key by ID
+    security:
+    - BearerAuth: [ ]
+    parameters:
+    - in: path
+      name: id
+      required: true
+      schema:
+        type: string
+        example: "1"
+    requestBody:
+      content:
+        application/json:
+          schema:
+            $ref: '../schemas/localization_key_schema.yaml'
+            example:
+              title: med-supply-new
+              level: 1
+    responses:
+      '200':
+        $ref: "../responses/success_response.yaml"
+  delete:
+    tags:
+      - LocalizationKey
+    summary: Delete Localization Key by ID
+    security:
+      - BearerAuth: []
+    parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: string
+          example: "1"
+    responses:
+      '200':
+        $ref : "../responses/success_response.yaml"
