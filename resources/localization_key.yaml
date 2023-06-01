@@ -7,7 +7,7 @@ KeyPath:
       - BearerAuth: []
     responses:
       '200':
-        $ref: '../responses/success_response.yaml'
+        $ref: './responses/success_response.yaml'
   post:
     tags:
       - LocalizationKey
@@ -16,13 +16,13 @@ KeyPath:
       content:
         application/json:
           schema:
-            $ref: '../schemas/localization_key_schema.yaml'
+            $ref: './schemas/localization_key_schema.yaml'
             example:
               title: med-supply
               level: 1
     responses:
       '200':
-        $ref: '../responses/success_response.yaml'
+        $ref: './responses/success_response.yaml'
 KeyPathWithID:
   patch:
     tags:
@@ -41,13 +41,13 @@ KeyPathWithID:
       content:
         application/json:
           schema:
-            $ref: '../schemas/localization_key_schema.yaml'
+            $ref: './schemas/localization_key_schema.yaml'
             example:
               title: med-supply-new
               level: 1
     responses:
       '200':
-        $ref: "../responses/success_response.yaml"
+        $ref: "./responses/success_response.yaml"
   delete:
     tags:
       - LocalizationKey
@@ -63,4 +63,4 @@ KeyPathWithID:
           example: "1"
     responses:
       '200':
-        $ref : "../responses/success_response.yaml"
+        $ref : "./responses/success_response.yaml"
